@@ -4,8 +4,6 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.ExecutionListener;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
-
 @Component("populateVariablesListener")
 public class PopulateVariablesListener implements ExecutionListener {
 
@@ -13,7 +11,6 @@ public class PopulateVariablesListener implements ExecutionListener {
     public void notify(DelegateExecution execution) throws Exception {
         System.out.println("start | execution listener");
         String itemCorrelationId = execution.getBusinessKey() + execution.getVariable("itemId");
-        //execution.setVariable("itemCorrelationId", itemCorrelationId);
         execution.setVariableLocal("localItemId", execution.getBusinessKey() + "|" +execution.getVariable("itemId"));
         System.out.println("end | execution listener");
     }

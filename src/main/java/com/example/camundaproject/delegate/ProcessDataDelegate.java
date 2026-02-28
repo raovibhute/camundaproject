@@ -17,7 +17,6 @@ public class ProcessDataDelegate implements JavaDelegate {
         execution.setVariable("correlationId", correlationId);
         execution.setVariable("items", items);
         List<Map<String, Object>> processedItems = new ArrayList<>();
-        //processedItems.add(Map.of("itemId", "A123", "packed", true));
         execution.setVariable("processedItems", processedItems);
     }
 }
