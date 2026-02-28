@@ -11,7 +11,7 @@ public class PopulateVariablesListener implements ExecutionListener {
     public void notify(DelegateExecution execution) throws Exception {
         System.out.println("start | execution listener");
         String itemCorrelationId = execution.getBusinessKey() + execution.getVariable("itemId");
-        execution.setVariableLocal("localItemId", execution.getBusinessKey() + "|" +execution.getVariable("itemId"));
+        execution.setVariableLocal("localItemId", execution.getVariable("itemId"));
         System.out.println("end | execution listener");
     }
 }
